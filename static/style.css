@@ -1,0 +1,262 @@
+/* 게시글 박스 스타일 */
+.card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer; /* 박스 전체 클릭 가능 */
+}
+
+/* 박스 hover 효과 */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 박스 내부 링크 */
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 박스 전체를 링크로 만듦 */
+}
+
+/* 게시글 제목 */
+.card h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+    margin: 20px 0;
+    position: relative;
+}
+
+.create-button {
+    justify-content: flex-end; 
+    background-color: #2db400;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+    .create-button:hover {
+        background-color: #239a00;
+    }
+
+/* "허접한 게시판" 아래 선 스타일 */
+.separator {
+    border: 0;
+    height: 2px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+/* 검색 및 글쓰기 버튼 컨테이너 */
+.search-box {
+    display: flex;
+    justify-content: flex-end; /* 검색창과 버튼을 오른쪽 정렬 */
+    align-items: center;
+    gap: 10px; /* 검색창, 기준 칸, 버튼 간 간격 */
+    height: 42px; /* 검색 버튼의 높이 */
+    box-sizing: border-box; /* 높이와 패딩 포함 계산 */
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between; /* 글쓰기 버튼은 왼쪽, 검색창은 오른쪽으로 정렬 */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container button {
+    background-color: #2db400;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px; /* 검색 버튼과 크기 일치 */
+    height: 42px; /* 검색 버튼의 높이 */
+    box-sizing: border-box; /* 높이와 패딩 포함 계산 */
+}
+
+.search-container button:hover {
+    background-color: #239a00;
+}
+
+/* 게시글 내용 */
+.card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* 시간 위치 */
+.card small {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 수정/삭제 버튼 컨테이너 */
+.actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 수정/삭제 버튼 스타일 */
+.actions a,
+.actions button {
+    font-size: 12px;
+    color: white;
+    background-color: #2db400;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center;    /* 수직 중앙 정렬 */
+    height: 100vh;          /* 화면 전체 높이를 사용 */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* 콘텐츠 컨테이너 */
+.container {
+    width: 90%;
+    max-width: 800px; /* 최대 너비 설정 */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 폼 입력 스타일 */
+.form-container label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #555;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-container textarea {
+    resize: none;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 수정 버튼 스타일 */
+.submit-button {
+    background-color: #2db400;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #239a00;
+}
+
+/* 뒤로가기 버튼 스타일 */
+.back-button {
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #bbb;
+}
+
+
+.actions a:hover,
+.actions button:hover {
+    background-color: #239a00;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>비밀번호 확인</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        // 에러 메시지가 있는 경우 팝업 표시
+        function showError(message) {
+            if (message && message !== 'None') {
+                alert(message);  // 팝업 메시지 표시
+            }
+        }
+    </script>
+</head>
+<body onload="showError('{{ error_message }}')">
+    <div class="container">
+        <h1>비밀번호 확인</h1>
+        <form method="post">
+            <label for="password">비밀번호를 입력하세요:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">확인</button>
+        </form>
+    </div>
+</body>
+</html>

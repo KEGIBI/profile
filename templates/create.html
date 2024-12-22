@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기 - 허접한 게시판</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 제목 -->
+        <h1 onclick="location.href='/'">허접한 게시판</h1>
+        <hr class="separator">
+
+        <!-- 글쓰기 폼 -->
+        <div class="form-container">
+            <h2>글쓰기</h2>
+            <form method="post" enctype="multipart/form-data">
+                <!-- 제목 입력 -->
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" placeholder="제목을 입력하세요" required>
+
+                <!-- 내용 입력 -->
+                <label for="content">내용</label>
+                <textarea id="content" name="content" rows="10" placeholder="내용을 입력하세요" required></textarea>
+
+                <!-- 비밀번호 입력 -->
+                <label for="password">비밀번호 (선택)</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요 (선택사항)">
+                
+                <!-- 파일 업로드 -->
+                <label for="file">파일 업로드</label>
+                <input type="file" id="file" name="file">
+
+                <!-- 버튼 그룹 -->
+                <div class="button-group">
+                    <button type="submit" class="submit-button">작성</button>
+                    <a href="/" class="back-button">뒤로가기</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

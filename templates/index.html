@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>허접한 게시판</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 onclick="location.href='/'">허접한 게시판</h1>
+            <a href="/logout" class="logout-button">로그아웃</a>
+            <a href="{{ url_for('myprofile') }}">내 프로필</a>
+        </div>
+        <div class="search-container">
+            <a href="/create" class="create-button">글쓰기</a>
+            <form method="get" action="/search">
+                <div class="search-box">
+                    <input type="text" name="q" placeholder="검색어 입력" required>
+                    <select name="criteria">
+                        <option value="all">전체</option>
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <button type="submit">검색</button>
+                </div>
+            </form>
+        </div>
+        <hr class="separator">
+
+        <!-- 검색 결과 표시 -->
+        {% if search_query %}
+            <h2>검색 결과: "{{ search_query }}"</h2>
+            {% if posts|length == 0 %}
+                <p>검색 결과가 없습니다.</p>
+            {% else %}
+                {% for post in posts %}
+                <div class="card">
+                    <a href="/post/{{ post.id }}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                    <p><strong>작성자:</strong> {{ post.author_name }}</p>
+                    <small>{{ post.created_at }}</small>
+                    <div class="actions">
+                        <a href="/update/{{ post.id }}" class="edit-button">수정</a>
+                        <form action="/delete/{{ post.id }}" method="post" style="display:inline;">
+                            <button type="submit" class="delete-button">삭제</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% else %}
+            <!-- 기본 게시글 리스트 -->
+            {% if posts|length == 0 %}
+                <p>게시글이 없습니다.</p>
+            {% else %}
+                {% for post in posts %}
+                <div class="card">
+                    <a href="/post/{{ post.id }}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                    <p><strong>작성자:</strong> {{ post.author_name }}</p>
+                    <small>{{ post.created_at }}</small>
+                    <div class="actions">
+                        <a href="/update/{{ post.id }}" class="edit-button">수정</a>
+                        <form action="/delete/{{ post.id }}" method="post" style="display:inline;">
+                            <button type="submit" class="delete-button">삭제</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

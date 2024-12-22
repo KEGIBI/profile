@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }} - 허접한 게시판</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 게시판 제목 -->
+        <h1 onclick="location.href='/'">허접한 게시판</h1>
+        <hr class="separator">
+
+        <!-- 게시글 내용 -->
+        <div class="card">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <small>Posted on: {{ post.created_at }}</small>
+            <p><strong>작성자:</strong> {{ post.author_name }}</p>
+            <a href="/viewprofile/{{ post.author_user_id }}">작성자 프로필 보기</a>
+
+            {% if post.filename %}
+            <a href="{{ url_for('download_file', filename=post.filename) }}" class="download-button">파일 다운로드</a>
+            {% endif %}
+        </div>
+
+        <a href="/" class="create-button">목록으로</a>
+    </div>
+</body>
+</html>

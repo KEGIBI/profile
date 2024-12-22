@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.name }}의 프로필</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ user.name }}님의 프로필</h1>
+
+        <!-- 프로필 정보 표시 -->
+        <p><strong>이름:</strong> {{ user.name }}</p>
+        <p><strong>학교:</strong> {{ user.school }}</p>
+
+        <!-- 프로필 이미지 -->
+        {% if user.profile_image %}
+            <p><strong>프로필 이미지:</strong></p>
+            <img src="/uploads/{{ user.profile_image }}" alt="프로필 이미지">
+        {% else %}
+            <p>프로필 이미지가 없습니다.</p>
+        {% endif %}
+
+        <!-- 게시판 목록으로 돌아가기 버튼 -->
+        <button onclick="location.href='/'">게시판으로 돌아가기</button>
+    </div>
+</body>
+</html>

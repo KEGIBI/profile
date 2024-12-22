@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정 - 허접한 게시판</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="location.href='/'">허접한 게시판</h1>
+        <hr class="separator">
+        <div class="form-container">
+            <h2>게시글 수정</h2>
+            <form method="post">
+                <!-- 제목 입력 -->
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" value="{{ post.title }}" required>
+
+                <!-- 내용 입력 -->
+                <label for="content">내용</label>
+                <textarea id="content" name="content" rows="10" required>{{ post.content }}</textarea>
+
+                <!-- 버튼 그룹 -->
+                <div class="button-group">
+                    <button type="submit" class="submit-button">수정</button>
+                    <a href="/" class="back-button">뒤로가기</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

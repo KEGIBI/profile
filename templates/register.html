@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script>
+        // 에러 메시지가 있을 경우 팝업으로 표시
+        function showError(message) {
+            if (message) {
+                alert(message);  // JavaScript 팝업 창
+            }
+        }
+    </script>
+</head>
+<body onload="showError('{{ regierror_message }}')">
+    <h1>회원가입</h1>
+    <form action="/register" method="post">
+        <label for="user_id">ID:</label>
+        <input type="text" id="user_id" name="user_id" required>
+        <br>
+        <label for="password">PW:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="school">학교:</label>
+        <input type="text" id="school" name="school" required>
+        <br>
+        <button type="submit">회원가입</button>
+    </form>
+</body>
+</html>
